@@ -4,7 +4,6 @@
             <div class="col-md-12 text-center">
                 <p class="to-animate">
                 <br> 
-                {{-- Designed by <a href="#" target="_blank">FLASH TEAM</a> Demo Images: <a href="http://pexels.com/" target="_blank">Pexels</a> --}}
                 “Cooking is an art, but all art requires knowing something about the techniques and materials”
                 <br>
                 — Nathan Myhrvold

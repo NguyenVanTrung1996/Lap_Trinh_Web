@@ -240,3 +240,12 @@ body{
 {
     box-shadow: 2px 5px 5px -3px #333;
 }
+
+.log_sig {
+    background-color: red;
+    color: #fff;
+    width: 9%;
+    font-size: 21px !important;
+    box-shadow: 3px 5px 5px -3px white;
+    margin-top: 20px;
+}
