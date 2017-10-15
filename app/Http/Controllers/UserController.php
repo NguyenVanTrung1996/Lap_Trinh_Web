@@ -23,7 +23,7 @@ class UserController extends Controller
 //            return redirect()->route('home');
 //        }
         $users = $this->information->first();
-        return view('sites.user_profile', compact('users'));
+        return view('sites.user.user_profile', compact('users'));
     }
 
     public function editProfile(Request $request)

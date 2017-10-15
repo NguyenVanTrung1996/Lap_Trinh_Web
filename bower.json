@@ -7,12 +7,10 @@
   ],
   "license": "MIT",
   "homepage": "https://github.com/HoangManhDuy/Lap_Trinh_Web",
-  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
-    "public/bower",
+    "bower",
     "test",
     "tests"
   ],
