@@ -32,3 +32,5 @@ Route::get('admin','AdminController@admin');
 Route::get('user/profile', 'UserController@profile')->name('profile');
 
 Route::post('user/edit', 'UserController@editProfile')->name('edit.profile');
+
+Route::get('product/detail', 'ProductController@detail')->name('product.detail');
