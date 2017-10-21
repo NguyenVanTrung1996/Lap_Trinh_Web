@@ -1,0 +1,35 @@
+{
+  "name": "Lap_Trinh_Web",
+  "description": "",
+  "main": "",
+  "authors": [
+    "HoangDuy <hoangduyib96@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/HoangManhDuy/Lap_Trinh_Web",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-datetimepicker": "^0.0.11",
+    "flexslider": "FlexSlider#^2.6.4",
+    "icomoon-bower": "icomoon#^0.1.2",
+    "jQuery": "^3.2.1",
+    "bootstrap": "^3.3.7",
+    "easing": "*",
+    "animate.css": "animate-css#^3.5.2",
+    "wow": "WOW#^1.1.2",
+    "modernizr": "^3.5.0",
+    "simple-line-icons": "^2.4.1",
+    "modernizr": "^3.5.0",
+    "owl.carousel": "^2.2.1",
+    "vue": "^2.5.2",
+    "axios": "^0.16.2",
+    "font-awesome": "^4.7.0",
+    "admin-lte": "adminlte#^2.4.2"
+  }
+}
