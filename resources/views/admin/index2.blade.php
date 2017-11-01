@@ -7,18 +7,18 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower/bootstrap/dist/css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bower/font-awesome/css/font-awesome.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="bower/Ionicons/css/ionicons.min.css">
     <!-- jvectormap -->
-    <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
+    <link rel="stylesheet" href="bower/jvectormap/jquery-jvectormap.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="bower/admin-lte/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="bower/admin-lte/dist/css/skins/_all-skins.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,7 +37,7 @@
     <header class="main-header">
 
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="{{route('admin_index2')}}" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>A</b>LT</span>
             <!-- logo for regular state and mobile devices -->
@@ -67,7 +67,8 @@
                                     <li><!-- start message -->
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                                <img src="dist/img/user2-160x160.jpg" class="img-circle"
+                                                     alt="User Image">
                                             </div>
                                             <h4>
                                                 Support Team
@@ -80,7 +81,8 @@
                                     <li>
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                                                <img src="dist/img/user3-128x128.jpg" class="img-circle"
+                                                     alt="User Image">
                                             </div>
                                             <h4>
                                                 AdminLTE Design Team
@@ -92,7 +94,8 @@
                                     <li>
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                                                <img src="dist/img/user4-128x128.jpg" class="img-circle"
+                                                     alt="User Image">
                                             </div>
                                             <h4>
                                                 Developers
@@ -104,7 +107,8 @@
                                     <li>
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                                                <img src="dist/img/user3-128x128.jpg" class="img-circle"
+                                                     alt="User Image">
                                             </div>
                                             <h4>
                                                 Sales Department
@@ -116,7 +120,8 @@
                                     <li>
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                                                <img src="dist/img/user4-128x128.jpg" class="img-circle"
+                                                     alt="User Image">
                                             </div>
                                             <h4>
                                                 Reviewers
@@ -148,7 +153,8 @@
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
+                                            <i class="fa fa-warning text-yellow"></i> Very long description here that
+                                            may not fit into the
                                             page and may cause design problems
                                         </a>
                                     </li>
@@ -190,7 +196,8 @@
                                                 <small class="pull-right">20%</small>
                                             </h3>
                                             <div class="progress xs">
-                                                <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
+                                                <div class="progress-bar progress-bar-aqua" style="width: 20%"
+                                                     role="progressbar"
                                                      aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                                                     <span class="sr-only">20% Complete</span>
                                                 </div>
@@ -205,7 +212,8 @@
                                                 <small class="pull-right">40%</small>
                                             </h3>
                                             <div class="progress xs">
-                                                <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar"
+                                                <div class="progress-bar progress-bar-green" style="width: 40%"
+                                                     role="progressbar"
                                                      aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                                                     <span class="sr-only">40% Complete</span>
                                                 </div>
@@ -220,7 +228,8 @@
                                                 <small class="pull-right">60%</small>
                                             </h3>
                                             <div class="progress xs">
-                                                <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar"
+                                                <div class="progress-bar progress-bar-red" style="width: 60%"
+                                                     role="progressbar"
                                                      aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                                                     <span class="sr-only">60% Complete</span>
                                                 </div>
@@ -235,7 +244,8 @@
                                                 <small class="pull-right">80%</small>
                                             </h3>
                                             <div class="progress xs">
-                                                <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar"
+                                                <div class="progress-bar progress-bar-yellow" style="width: 80%"
+                                                     role="progressbar"
                                                      aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                                                     <span class="sr-only">80% Complete</span>
                                                 </div>
@@ -338,8 +348,8 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-                        <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+                        <li><a href="{{route('admin_index')}}"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+                        {{--<li class="active"><a href="{{route('admin_index2')}}"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>--}}
                     </ul>
                 </li>
                 <li class="treeview">
@@ -354,7 +364,8 @@
                         <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
                         <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
                         <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-                        <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+                        <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed
+                                Sidebar</a></li>
                     </ul>
                 </li>
                 <li>
@@ -406,7 +417,8 @@
                     </a>
                     <ul class="treeview-menu">
                         <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
-                        <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
+                        <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a>
+                        </li>
                         <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
                     </ul>
                 </li>
@@ -587,10 +599,12 @@
                             <h3 class="box-title">Monthly Recap Report</h3>
 
                             <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                            class="fa fa-minus"></i>
                                 </button>
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
+                                    <button type="button" class="btn btn-box-tool dropdown-toggle"
+                                            data-toggle="dropdown">
                                         <i class="fa fa-wrench"></i></button>
                                     <ul class="dropdown-menu" role="menu">
                                         <li><a href="#">Action</a></li>
@@ -600,7 +614,8 @@
                                         <li><a href="#">Separated link</a></li>
                                     </ul>
                                 </div>
-                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i
+                                            class="fa fa-times"></i></button>
                             </div>
                         </div>
                         <!-- /.box-header -->
@@ -678,7 +693,8 @@
                                 <!-- /.col -->
                                 <div class="col-sm-3 col-xs-6">
                                     <div class="description-block border-right">
-                                        <span class="description-percentage text-yellow"><i class="fa fa-caret-left"></i> 0%</span>
+                                        <span class="description-percentage text-yellow"><i
+                                                    class="fa fa-caret-left"></i> 0%</span>
                                         <h5 class="description-header">$10,390.90</h5>
                                         <span class="description-text">TOTAL COST</span>
                                     </div>
@@ -723,9 +739,11 @@
                             <h3 class="box-title">Visitors Report</h3>
 
                             <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                            class="fa fa-minus"></i>
                                 </button>
-                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i
+                                            class="fa fa-times"></i></button>
                             </div>
                         </div>
                         <!-- /.box-header -->
@@ -775,13 +793,17 @@
                                     <h3 class="box-title">Direct Chat</h3>
 
                                     <div class="box-tools pull-right">
-                                        <span data-toggle="tooltip" title="3 New Messages" class="badge bg-yellow">3</span>
-                                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                        <span data-toggle="tooltip" title="3 New Messages"
+                                              class="badge bg-yellow">3</span>
+                                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                                    class="fa fa-minus"></i>
                                         </button>
-                                        <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="Contacts"
+                                        <button type="button" class="btn btn-box-tool" data-toggle="tooltip"
+                                                title="Contacts"
                                                 data-widget="chat-pane-toggle">
                                             <i class="fa fa-comments"></i></button>
-                                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i
+                                                    class="fa fa-times"></i>
                                         </button>
                                     </div>
                                 </div>
@@ -796,7 +818,8 @@
                                                 <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span>
                                             </div>
                                             <!-- /.direct-chat-info -->
-                                            <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
+                                            <img class="direct-chat-img" src="dist/img/user1-128x128.jpg"
+                                                 alt="message user image">
                                             <!-- /.direct-chat-img -->
                                             <div class="direct-chat-text">
                                                 Is this template really for free? That's unbelievable!
@@ -812,7 +835,8 @@
                                                 <span class="direct-chat-timestamp pull-left">23 Jan 2:05 pm</span>
                                             </div>
                                             <!-- /.direct-chat-info -->
-                                            <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
+                                            <img class="direct-chat-img" src="dist/img/user3-128x128.jpg"
+                                                 alt="message user image">
                                             <!-- /.direct-chat-img -->
                                             <div class="direct-chat-text">
                                                 You better believe it!
@@ -828,7 +852,8 @@
                                                 <span class="direct-chat-timestamp pull-right">23 Jan 5:37 pm</span>
                                             </div>
                                             <!-- /.direct-chat-info -->
-                                            <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
+                                            <img class="direct-chat-img" src="dist/img/user1-128x128.jpg"
+                                                 alt="message user image">
                                             <!-- /.direct-chat-img -->
                                             <div class="direct-chat-text">
                                                 Working with AdminLTE on a great new app! Wanna join?
@@ -844,7 +869,8 @@
                                                 <span class="direct-chat-timestamp pull-left">23 Jan 6:10 pm</span>
                                             </div>
                                             <!-- /.direct-chat-info -->
-                                            <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
+                                            <img class="direct-chat-img" src="dist/img/user3-128x128.jpg"
+                                                 alt="message user image">
                                             <!-- /.direct-chat-img -->
                                             <div class="direct-chat-text">
                                                 I would love to.
@@ -861,7 +887,8 @@
                                         <ul class="contacts-list">
                                             <li>
                                                 <a href="#">
-                                                    <img class="contacts-list-img" src="dist/img/user1-128x128.jpg" alt="User Image">
+                                                    <img class="contacts-list-img" src="dist/img/user1-128x128.jpg"
+                                                         alt="User Image">
 
                                                     <div class="contacts-list-info">
                                 <span class="contacts-list-name">
@@ -876,7 +903,8 @@
                                             <!-- End Contact Item -->
                                             <li>
                                                 <a href="#">
-                                                    <img class="contacts-list-img" src="dist/img/user7-128x128.jpg" alt="User Image">
+                                                    <img class="contacts-list-img" src="dist/img/user7-128x128.jpg"
+                                                         alt="User Image">
 
                                                     <div class="contacts-list-info">
                                 <span class="contacts-list-name">
@@ -891,7 +919,8 @@
                                             <!-- End Contact Item -->
                                             <li>
                                                 <a href="#">
-                                                    <img class="contacts-list-img" src="dist/img/user3-128x128.jpg" alt="User Image">
+                                                    <img class="contacts-list-img" src="dist/img/user3-128x128.jpg"
+                                                         alt="User Image">
 
                                                     <div class="contacts-list-info">
                                 <span class="contacts-list-name">
@@ -906,7 +935,8 @@
                                             <!-- End Contact Item -->
                                             <li>
                                                 <a href="#">
-                                                    <img class="contacts-list-img" src="dist/img/user5-128x128.jpg" alt="User Image">
+                                                    <img class="contacts-list-img" src="dist/img/user5-128x128.jpg"
+                                                         alt="User Image">
 
                                                     <div class="contacts-list-info">
                                 <span class="contacts-list-name">
@@ -921,7 +951,8 @@
                                             <!-- End Contact Item -->
                                             <li>
                                                 <a href="#">
-                                                    <img class="contacts-list-img" src="dist/img/user6-128x128.jpg" alt="User Image">
+                                                    <img class="contacts-list-img" src="dist/img/user6-128x128.jpg"
+                                                         alt="User Image">
 
                                                     <div class="contacts-list-info">
                                 <span class="contacts-list-name">
@@ -936,7 +967,8 @@
                                             <!-- End Contact Item -->
                                             <li>
                                                 <a href="#">
-                                                    <img class="contacts-list-img" src="dist/img/user8-128x128.jpg" alt="User Image">
+                                                    <img class="contacts-list-img" src="dist/img/user8-128x128.jpg"
+                                                         alt="User Image">
 
                                                     <div class="contacts-list-info">
                                 <span class="contacts-list-name">
@@ -958,7 +990,8 @@
                                 <div class="box-footer">
                                     <form action="#" method="post">
                                         <div class="input-group">
-                                            <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+                                            <input type="text" name="message" placeholder="Type Message ..."
+                                                   class="form-control">
                                             <span class="input-group-btn">
                             <button type="button" class="btn btn-warning btn-flat">Send</button>
                           </span>
@@ -979,9 +1012,11 @@
 
                                     <div class="box-tools pull-right">
                                         <span class="label label-danger">8 New Members</span>
-                                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                                    class="fa fa-minus"></i>
                                         </button>
-                                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i
+                                                    class="fa fa-times"></i>
                                         </button>
                                     </div>
                                 </div>
@@ -1049,9 +1084,11 @@
                             <h3 class="box-title">Latest Orders</h3>
 
                             <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                            class="fa fa-minus"></i>
                                 </button>
-                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i
+                                            class="fa fa-times"></i></button>
                             </div>
                         </div>
                         <!-- /.box-header -->
@@ -1072,7 +1109,9 @@
                                         <td>Call of Duty IV</td>
                                         <td><span class="label label-success">Shipped</span></td>
                                         <td>
-                                            <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
+                                            <div class="sparkbar" data-color="#00a65a" data-height="20">
+                                                90,80,90,-70,61,-83,63
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
@@ -1080,7 +1119,9 @@
                                         <td>Samsung Smart TV</td>
                                         <td><span class="label label-warning">Pending</span></td>
                                         <td>
-                                            <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
+                                            <div class="sparkbar" data-color="#f39c12" data-height="20">
+                                                90,80,-90,70,61,-83,68
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
@@ -1088,7 +1129,9 @@
                                         <td>iPhone 6 Plus</td>
                                         <td><span class="label label-danger">Delivered</span></td>
                                         <td>
-                                            <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
+                                            <div class="sparkbar" data-color="#f56954" data-height="20">
+                                                90,-80,90,70,-61,83,63
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
@@ -1096,7 +1139,9 @@
                                         <td>Samsung Smart TV</td>
                                         <td><span class="label label-info">Processing</span></td>
                                         <td>
-                                            <div class="sparkbar" data-color="#00c0ef" data-height="20">90,80,-90,70,-61,83,63</div>
+                                            <div class="sparkbar" data-color="#00c0ef" data-height="20">
+                                                90,80,-90,70,-61,83,63
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
@@ -1104,7 +1149,9 @@
                                         <td>Samsung Smart TV</td>
                                         <td><span class="label label-warning">Pending</span></td>
                                         <td>
-                                            <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
+                                            <div class="sparkbar" data-color="#f39c12" data-height="20">
+                                                90,80,-90,70,61,-83,68
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
@@ -1112,7 +1159,9 @@
                                         <td>iPhone 6 Plus</td>
                                         <td><span class="label label-danger">Delivered</span></td>
                                         <td>
-                                            <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
+                                            <div class="sparkbar" data-color="#f56954" data-height="20">
+                                                90,-80,90,70,-61,83,63
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
@@ -1120,7 +1169,9 @@
                                         <td>Call of Duty IV</td>
                                         <td><span class="label label-success">Shipped</span></td>
                                         <td>
-                                            <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
+                                            <div class="sparkbar" data-color="#00a65a" data-height="20">
+                                                90,80,90,-70,61,-83,63
+                                            </div>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -1130,8 +1181,10 @@
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer clearfix">
-                            <a href="javascript:void(0)" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
-                            <a href="javascript:void(0)" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a>
+                            <a href="javascript:void(0)" class="btn btn-sm btn-info btn-flat pull-left">Place New
+                                Order</a>
+                            <a href="javascript:void(0)" class="btn btn-sm btn-default btn-flat pull-right">View All
+                                Orders</a>
                         </div>
                         <!-- /.box-footer -->
                     </div>
@@ -1215,9 +1268,11 @@
                             <h3 class="box-title">Browser Usage</h3>
 
                             <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                            class="fa fa-minus"></i>
                                 </button>
-                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i
+                                            class="fa fa-times"></i></button>
                             </div>
                         </div>
                         <!-- /.box-header -->
@@ -1248,11 +1303,13 @@
                         <div class="box-footer no-padding">
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="#">United States of America
-                                        <span class="pull-right text-red"><i class="fa fa-angle-down"></i> 12%</span></a></li>
+                                        <span class="pull-right text-red"><i
+                                                    class="fa fa-angle-down"></i> 12%</span></a></li>
                                 <li><a href="#">India <span class="pull-right text-green"><i class="fa fa-angle-up"></i> 4%</span></a>
                                 </li>
                                 <li><a href="#">China
-                                        <span class="pull-right text-yellow"><i class="fa fa-angle-left"></i> 0%</span></a></li>
+                                        <span class="pull-right text-yellow"><i class="fa fa-angle-left"></i> 0%</span></a>
+                                </li>
                             </ul>
                         </div>
                         <!-- /.footer -->
@@ -1265,9 +1322,11 @@
                             <h3 class="box-title">Recently Added Products</h3>
 
                             <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                            class="fa fa-minus"></i>
                                 </button>
-                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i
+                                            class="fa fa-times"></i></button>
                             </div>
                         </div>
                         <!-- /.box-header -->
@@ -1547,25 +1606,25 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- FastClick -->
-<script src="bower_components/fastclick/lib/fastclick.js"></script>
+<script src="bower/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
+<script src="bower/admin-lte/dist/js/adminlte.min.js"></script>
 <!-- Sparkline -->
-<script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+<script src="bower/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
 <!-- jvectormap  -->
-<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<script src="bower/admin-lte/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="bower/admin-lte/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
 <!-- SlimScroll -->
-<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="bower/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- ChartJS -->
-<script src="bower_components/Chart.js/Chart.js"></script>
+<script src="bower/Chart.js/Chart.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard2.js"></script>
+<script src="bower/admin-lte/dist/js/pages/dashboard2.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
+<script src="bower/admin-lte/dist/js/demo.js"></script>
 </body>
 </html>

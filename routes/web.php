@@ -48,4 +48,5 @@ Route::get('drinks','ProductController@getdata_drink');
 // 	return App\Product::destroy($id);
 // });
 });
-
+Route::get('/index', 'AdminController@admin')->name('admin_index');
+Route::get('index2', 'AdminController@admin2')->name('admin_index2');
