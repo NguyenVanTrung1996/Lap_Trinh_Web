@@ -9,6 +9,9 @@ use Validator;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\Product;
+use App\Helpers\HelpText;
+use Hash;
+use Response;
 
 class UserController extends Controller
 {
@@ -45,20 +48,35 @@ class UserController extends Controller
         ));
     }
 
-    public function editProfile(Request $request)
-    {
-        $validator = Validator::make($request->all(), [
-            'full_name' => 'required',
-        ]);
-        if ($validator->fails()) {
-            return redirect()
-                ->route('profile')
-                ->withErrors($validator);
-        }
-        $users = User::find(Auth::user()->id);
-        $users->fill($request->all());
-        $users->save();
+//    public function editProfile(Request $request)
+//    {
+//        $validator = Validator::make($request->all(), [
+//            'full_name' => 'required',
+//        ]);
+//        if ($validator->fails()) {
+//            return redirect()
+//                ->route('user.profile')
+//                ->withErrors($validator);
+//        }
+//        $users = User::find(Auth::user()->id);
+//        $users->fill($request->all());
+//        $users->save();
+//
+//        return view('sites.user.edit_profile');
+//    }
 
-        return view('sites.user.edit_profile');
+    public function updateAvatar(Request $request) {
+        $user = User::find(Auth::user()->id);
+
+        if($request->hasFile('image_upload')){
+            HelpText::deleteFile($user->avatar);
+
+            $nameFile = $request->image_upload->hashName();
+            $path = $request->file('image_upload')->store('upload/user_image', 'uploads');
+            $user->avatar = $path;
+            $user->save();
+        }
+
+        return redirect()->back();
     }
 }

@@ -22,7 +22,7 @@ Route::get('admin', 'AdminController@admin');
 
 Route::get('user/profile/{id}', ['as' => 'user.profile', 'uses' => 'UserController@profile', 'middleware' => 'auth']);
 
-Route::post('user/edit/{id}', 'UserController@editProfile')->name('user.edit');
+Route::post('user/edit/avatar', 'UserController@updateAvatar')->name('user.update.avatar');
 
 Route::get('product/{id}', 'ProductController@detail')->name('product.detail');
 // login facebook

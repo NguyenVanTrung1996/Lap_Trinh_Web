@@ -35,13 +35,12 @@
             <div class="row fix-profile-bottom">
                 <div class="img-avata-icon">
                     @if((Auth::user()->avatar) != null)
-                        <img src="{!! Auth::user()->avatar !!}" class="img-responsive"/>
+                        <img src="{!! url(Auth::user()->avatar) !!}" class="img-responsive"/>
                     @else
-                        <img src="{!! asset('/img/avata.png') !!}" class="img-responsive"/>
+                        <img src="{!! asset('/img/avata.png') !!}" class ="img-responsive"/>
                     @endif
                     <div class="edit-icon">
-                        <a href="javascript:void(0)" data-toggle="modal"
-                           data-target="#modalAvatar">
+                        <a data-toggle="modal" data-target="#modalAvatar">
                             <i class="fa fa-pencil"></i> {{ __('edit') }}
                         </a>
                     </div>
@@ -71,7 +70,7 @@
                 <a href="javascript:void(0)" data-toggle="modal" data-target="#modalProfile">
                     (<i class="fa fa-pencil"></i> {{ __('Edit Profile') }})
                 </a>
-                <a href="javascript:void(0)" class="text-center" data-toggle="modal" data-target="#modalProfile">
+                <a href="javascript:void(0)" class="text-center" data-toggle="modal" data-target="#modalPassword">
                     (<i class="fa fa-pencil"></i> {{ __('Edit Password') }})
                 </a>
             </div>
@@ -400,7 +399,171 @@
             </div><!--/tab-content-->
         </div><!--/col-9-->
     </div><!--/row-->
-
+    <!--Model edit-->
+    <!--Edit avatar-->
+    <div id="modalAvatar" class="modal fade" role="dialog">
+        <div class="modal-dialog form-edit">
+            <!-- Modal content-->
+            <div class="modal-content">
+                {{ Form::open([ 'route' => 'user.update.avatar', 'method' => 'post', 'files' => 'true', 'enctype' => 'multipart/form-data' ]) }}
+                <div class="modal-header">
+                    {{ Form::button('x', [ 'class' => 'close', 'data-dismiss' => 'modal' ]) }}
+                    <h4 class="modal-title">{{ __('upload avatar') }}</h4>
+                </div>
+                <div class="modal-body ">
+                    <div class="wrap-upload">
+                        <div class="row">
+                            <div class="wrap-image-upload">
+                                <div class="col-md-3 col-lg-3">
+                                </div>
+                                <div class="col-md-6 col-lg-6 img-padding-circle image-upload" align="center">
+                                    @if((Auth::user()->avatar) != null)
+                                        <img alt="User Pic" id="image_target" src="{!! url(Auth::user()->avatar) !!}"
+                                             class="img-circle img-responsive" width="300px" height="300px"/>
+                                    @else
+                                        <img alt="User Pic" id="image_target" src="{!! asset('/img/avata.png') !!}"
+                                             class="img-circle img-responsive" width="300px" height="300px"/>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wrap-upload-note">
+                            <span><b>{{ __('Note') }}:
+                                {{ __("Image's size recomment: width and width less than 350px") }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    {{ Form::file('image_upload', [ 'id' => 'edit_photo' ]) }}
+                    {{ Form::submit('Save', [ 'id' => 'submit_photo', 'class' => 'btn btn-success' ]) }}
+                </div>
+                {{ Form::close() }}
+            </div>
+        </div>
+    </div>
+    <!-- //end dialog edit avatar-->
+    <!-- dialog edit information-->
+    {{--<div id="modalProfile" class="modal fade" role="dialog">--}}
+        {{--<div class="modal-dialog form-edit">--}}
+            {{--<!-- Modal content-->--}}
+            {{--<div class="modal-content">--}}
+                {{--{{ Form::open([ 'route' => 'edit.profile', 'method' => 'post' ]) }}--}}
+                {{--<div class="modal-header">--}}
+                    {{--{{ Form::button('x', [ 'class' => 'close', 'data-dismiss' => 'modal' ]) }}--}}
+                    {{--<h4 class="modal-title">{{ __('edit profile') }}</h4>--}}
+                {{--</div>--}}
+                {{--<div class="modal-body ">--}}
+                    {{--<div class="row">--}}
+                        {{--<div class="form-group col-md-6 col-xs-12">--}}
+                            {{--{{ Form::label('full_name', __('full name')) }}--}}
+                            {{--{{ Form::text('full_name', Auth::User()->full_name,--}}
+                                {{--[ 'class' => 'form-control display_name' ])--}}
+                            {{--}}--}}
+                        {{--</div>--}}
+                        {{--<div class="form-group col-md-6 col-xs-12">--}}
+                            {{--{{ Form::label('display_name', __('display name')) }}--}}
+                            {{--{{ Form::text('display_name', Auth::User()->full_name,--}}
+                                {{--[ 'class' => 'form-control display_name' ])--}}
+                            {{--}}--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="row">--}}
+                        {{--<div class="form-group col-md-4 col-xs-12">--}}
+                            {{--{{ Form::label('gender', __('gender')) }}--}}
+                            {{--{{ Form::select('gender',--}}
+                                {{--[--}}
+                                    {{--'male' => __('male'),--}}
+                                    {{--'female' => __('female'),--}}
+                                    {{--'other' => __('other')--}}
+                                {{--],--}}
+                                {{--Auth::User()->gender,--}}
+                                {{--[ 'class' => 'form-control' ])--}}
+                            {{--}}--}}
+                        {{--</div>--}}
+                        {{--<div class="form-group col-md-4 col-xs-12">--}}
+                            {{--{{ Form::label('birthday', __('birthday')) }}--}}
+                            {{--{{ Form::date('birthday', Auth::User()->birthday, [ 'class' => 'form-control date_of_birth' ]) }}--}}
+                        {{--</div>--}}
+                        {{--<div class="form-group col-md-4 col-xs-12">--}}
+                            {{--{{ Form::label('phone', __('phone')) }}--}}
+                            {{--{{ Form::text('phone', Auth::User()->phone, [ 'class' => 'form-control phone' ]) }}--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="row">--}}
+                        {{--<div class="form-group col-md-6 col-xs-12">--}}
+                            {{--{{ Form::label('address', __('address')) }}--}}
+                            {{--{{ Form::text('address', Auth::User()->address, [ 'class' => 'form-control address' ]) }}--}}
+                        {{--</div>--}}
+                        {{--<div class="form-group col-md-6 col-xs-12">--}}
+                            {{--{{ Form::label('nationality', __('nationality')) }}--}}
+                            {{--{{ Form::text('nationality', Auth::User()->nationality, [ 'class' => 'form-control' ]) }}--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="row">--}}
+                        {{--<div class="form-group col-md-12 col-xs-12">--}}
+                            {{--{{ Form::label('description', __('description')) }}--}}
+                            {{--{{ Form::textarea('description', Auth::User()->description, [ 'class' => 'form-control', 'size' => '0x6' ]) }}--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="modal-footer">--}}
+                    {{--{{ Form::submit('Save', [ 'class' => 'btn btn-default' ]) }}--}}
+                {{--</div>--}}
+                {{--{{ Form::close() }}--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+    {{--<!--//end edit information -->--}}
+    {{--<!-- dialog edit password-->--}}
+    {{--<div id="modalPassword" class="modal fade" role="dialog">--}}
+        {{--<div class="modal-dialog form-edit">--}}
+            {{--<!-- Modal content-->--}}
+            {{--<div class="modal-content">--}}
+                {{--{{ Form::open([ 'route' => 'change.password', 'method' => 'post' ]) }}--}}
+                {{--<div class="modal-header">--}}
+                    {{--{{ Form::button('x', [ 'class' => 'close', 'data-dismiss' => 'modal' ]) }}--}}
+                    {{--<h4 class="modal-title">{{ __('edit password') }}</h4>--}}
+                {{--</div>--}}
+                {{--<div class="modal-body ">--}}
+                    {{--<form>--}}
+                        {{--<div class="form-group">--}}
+                            {{--{{ Form::label('old_password', __('old password')) }}--}}
+                            {{--{{ Form::password('old_password',--}}
+                                {{--[--}}
+                                {{--'class' => 'form-control',--}}
+                                {{--'placeholder' => 'old password'--}}
+                                {{--]--}}
+                            {{--) }}--}}
+                        {{--</div>--}}
+                        {{--<div class="form-group">--}}
+                            {{--{{ Form::label('new_password', __('new password')) }}--}}
+                            {{--{{ Form::password('new_password',--}}
+                                {{--[--}}
+                                {{--'class' => 'form-control',--}}
+                                {{--'placeholder' => 'new password'--}}
+                                {{--]--}}
+                            {{--) }}--}}
+                        {{--</div>--}}
+                        {{--<div class="form-group">--}}
+                            {{--{{ Form::label('confirm', __('confirm password')) }}--}}
+                            {{--{{ Form::password('confirm',--}}
+                                {{--[--}}
+                                {{--'class' => 'form-control',--}}
+                                {{--'placeholder' => 'confirm password'--}}
+                                {{--]--}}
+                            {{--) }}--}}
+                        {{--</div>--}}
+                    {{--</form>--}}
+                    {{--<div class="modal-footer">--}}
+                        {{--<button class="btn btn-success user-change-password">{{ __('change') }}</button>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--{{ Form::close() }}--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+    {{--<!-- //end dialog edit password-->--}}
     @include('sections.menu.footer')
 @endsection
 
