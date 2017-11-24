@@ -443,77 +443,61 @@
         </div>
     </div>
     <!-- //end dialog edit avatar-->
-    <!-- dialog edit information-->
-    {{--<div id="modalProfile" class="modal fade" role="dialog">--}}
-        {{--<div class="modal-dialog form-edit">--}}
-            {{--<!-- Modal content-->--}}
-            {{--<div class="modal-content">--}}
-                {{--{{ Form::open([ 'route' => 'edit.profile', 'method' => 'post' ]) }}--}}
-                {{--<div class="modal-header">--}}
-                    {{--{{ Form::button('x', [ 'class' => 'close', 'data-dismiss' => 'modal' ]) }}--}}
-                    {{--<h4 class="modal-title">{{ __('edit profile') }}</h4>--}}
-                {{--</div>--}}
-                {{--<div class="modal-body ">--}}
-                    {{--<div class="row">--}}
-                        {{--<div class="form-group col-md-6 col-xs-12">--}}
-                            {{--{{ Form::label('full_name', __('full name')) }}--}}
-                            {{--{{ Form::text('full_name', Auth::User()->full_name,--}}
-                                {{--[ 'class' => 'form-control display_name' ])--}}
-                            {{--}}--}}
-                        {{--</div>--}}
-                        {{--<div class="form-group col-md-6 col-xs-12">--}}
-                            {{--{{ Form::label('display_name', __('display name')) }}--}}
-                            {{--{{ Form::text('display_name', Auth::User()->full_name,--}}
-                                {{--[ 'class' => 'form-control display_name' ])--}}
-                            {{--}}--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="row">--}}
-                        {{--<div class="form-group col-md-4 col-xs-12">--}}
-                            {{--{{ Form::label('gender', __('gender')) }}--}}
-                            {{--{{ Form::select('gender',--}}
-                                {{--[--}}
-                                    {{--'male' => __('male'),--}}
-                                    {{--'female' => __('female'),--}}
-                                    {{--'other' => __('other')--}}
-                                {{--],--}}
-                                {{--Auth::User()->gender,--}}
-                                {{--[ 'class' => 'form-control' ])--}}
-                            {{--}}--}}
-                        {{--</div>--}}
-                        {{--<div class="form-group col-md-4 col-xs-12">--}}
-                            {{--{{ Form::label('birthday', __('birthday')) }}--}}
-                            {{--{{ Form::date('birthday', Auth::User()->birthday, [ 'class' => 'form-control date_of_birth' ]) }}--}}
-                        {{--</div>--}}
-                        {{--<div class="form-group col-md-4 col-xs-12">--}}
-                            {{--{{ Form::label('phone', __('phone')) }}--}}
-                            {{--{{ Form::text('phone', Auth::User()->phone, [ 'class' => 'form-control phone' ]) }}--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="row">--}}
-                        {{--<div class="form-group col-md-6 col-xs-12">--}}
-                            {{--{{ Form::label('address', __('address')) }}--}}
-                            {{--{{ Form::text('address', Auth::User()->address, [ 'class' => 'form-control address' ]) }}--}}
-                        {{--</div>--}}
-                        {{--<div class="form-group col-md-6 col-xs-12">--}}
-                            {{--{{ Form::label('nationality', __('nationality')) }}--}}
-                            {{--{{ Form::text('nationality', Auth::User()->nationality, [ 'class' => 'form-control' ]) }}--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="row">--}}
-                        {{--<div class="form-group col-md-12 col-xs-12">--}}
-                            {{--{{ Form::label('description', __('description')) }}--}}
-                            {{--{{ Form::textarea('description', Auth::User()->description, [ 'class' => 'form-control', 'size' => '0x6' ]) }}--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--<div class="modal-footer">--}}
-                    {{--{{ Form::submit('Save', [ 'class' => 'btn btn-default' ]) }}--}}
-                {{--</div>--}}
-                {{--{{ Form::close() }}--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
+    {{--<!-- dialog edit information-->--}}
+    <div id="modalProfile" class="modal fade" role="dialog">
+        <div class="modal-dialog form-edit">
+            <!-- Modal content-->
+            <div class="modal-content">
+                {{ Form::open([ 'route' => 'user.edit.profile', 'method' => 'post' ]) }}
+                <div class="modal-header">
+                    {{ Form::button('x', [ 'class' => 'close', 'data-dismiss' => 'modal' ]) }}
+                    <h4 class="modal-title">{{ __('edit profile') }}</h4>
+                </div>
+                <div class="modal-body ">
+                    <div class="row">
+                        <div class="form-group col-md-6 col-xs-12">
+                            {{ Form::label('name', __('Name:')) }}
+                            {{ Form::text('name', Auth::user()->name,
+                                [ 'class' => 'form-control display_name' ])
+                            }}
+                        </div>
+                        <div class="form-group col-md-4 col-xs-12">
+                            {{ Form::label('gender', __('Gender:')) }}
+                            {{ Form::select('gender',
+                                [
+                                    'male' => __('male'),
+                                    'female' => __('female'),
+                                    'other' => __('other')
+                                ],
+                                Auth::user()->gender,
+                                [ 'class' => 'form-control' ])
+                            }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4 col-xs-12">
+                            {{ Form::label('date_of_birth', __('Birthday:')) }}
+                            {{ Form::date('date_of_birth', Auth::user()->date_of_birth, [ 'class' => 'form-control date_of_birth' ]) }}
+                        </div>
+                        <div class="form-group col-md-4 col-xs-12">
+                            {{ Form::label('phone', __('Phone:')) }}
+                            {{ Form::text('phone', Auth::user()->phone, [ 'class' => 'form-control phone' ]) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6 col-xs-12">
+                            {{ Form::label('address', __('Address:')) }}
+                            {{ Form::text('address', Auth::user()->address, [ 'class' => 'form-control address' ]) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    {{ Form::submit('Save', [ 'class' => 'btn btn-success' ]) }}
+                </div>
+                {{ Form::close() }}
+            </div>
+        </div>
+    </div>
     {{--<!--//end edit information -->--}}
     {{--<!-- dialog edit password-->--}}
     {{--<div id="modalPassword" class="modal fade" role="dialog">--}}

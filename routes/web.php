@@ -24,6 +24,8 @@ Route::get('user/profile/{id}', ['as' => 'user.profile', 'uses' => 'UserControll
 
 Route::post('user/edit/avatar', 'UserController@updateAvatar')->name('user.update.avatar');
 
+Route::post('user/editProfile', 'UserController@editProfile')->name('user.edit.profile');
+
 Route::get('product/{id}', 'ProductController@detail')->name('product.detail');
 // login facebook
 Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('facebook');

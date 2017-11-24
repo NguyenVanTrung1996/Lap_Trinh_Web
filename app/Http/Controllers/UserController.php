@@ -48,22 +48,22 @@ class UserController extends Controller
         ));
     }
 
-//    public function editProfile(Request $request)
-//    {
-//        $validator = Validator::make($request->all(), [
-//            'full_name' => 'required',
-//        ]);
-//        if ($validator->fails()) {
-//            return redirect()
-//                ->route('user.profile')
-//                ->withErrors($validator);
-//        }
-//        $users = User::find(Auth::user()->id);
-//        $users->fill($request->all());
-//        $users->save();
-//
-//        return view('sites.user.edit_profile');
-//    }
+    public function editProfile(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return redirect()
+                ->route('user.profile')
+                ->withErrors($validator);
+        }
+        $users = User::find(Auth::user()->id);
+        $users->fill($request->all());
+        $users->save();
+
+        return redirect()->back();
+    }
 
     public function updateAvatar(Request $request) {
         $user = User::find(Auth::user()->id);
