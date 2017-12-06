@@ -1,0 +1,62 @@
+.cart {
+    min-height: 1000px;
+    width: 80%;
+    margin: auto;
+    border: 0.5px solid grey;
+    background-color: whitesmoke;
+    margin-bottom: 30px;
+}
+
+.cart-header {
+    width: 80%;
+    height: 100px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#title {
+    padding-top: 20px;
+    font-size: 2.5em;
+}
+
+.media-object {
+    float: left;
+    width: 150px;
+    height: 150px;
+    margin-right: 40px;
+}
+
+.media-body {
+    padding-top: 35px;
+}
+
+.cart table td {
+    vertical-align: middle !important;
+}
+
+table th {
+    font-size: 1.3em;
+}
+
+.product-col {
+    padding-left: 48px !important;
+}
+
+.modal-content {
+    width: 333px;
+}
+
+.modal-footer .btn-success {
+    margin-right: 22%;
+}
+
+.modal-footer .btn-danger {
+    margin-right: 4%;
+}
+
+.bootbox-body {
+    text-align: center;
+    font-size: 1.3em;
+}
