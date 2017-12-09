@@ -125,7 +125,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="action">
-                                        <button class="add-to-cart btn btn-default" type="button">add to cart</button>
+                                        <button class="add-to-cart btn btn-default" type="submit">add to cart</button>
                                     </div>
                                 </div>
                             </form>
