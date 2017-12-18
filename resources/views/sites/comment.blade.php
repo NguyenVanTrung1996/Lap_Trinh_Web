@@ -30,6 +30,11 @@
                                            data-readonly="true" data-max="5" data-min="0"
                                            data-step="0.5"
                                            size="sm" title="">
+                                    @if(Auth::user()->id == $comment->user_id)
+                                        <a class="btn delete" href={{route('deleteCmt',[$comment->product_id,$comment->id])}}
+                                                onclick="bootbox.confirm();"></a>
+                                        <button type="sub" class="edit1" style="cursor: pointer;"></button>
+                                    @endif
                                 </div>
                                 <div class="review-block-description">
                                     {{ $comment->content }}
@@ -45,3 +50,4 @@
 {{ HTML::script('/js/sites/product_comment.js')}}
 {{ HTML::script('js/sites/product_detail.js') }}
 {{ HTML::script('js/sites/star-rating.js')}}
+{{ HTML::script('bower/bootbox/bootbox.js') }}

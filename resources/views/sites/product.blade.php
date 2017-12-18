@@ -220,5 +220,6 @@
     {{ HTML::script('js/sites/product_detail.js') }}
     {{ HTML::script('js/sites/star-rating.js')}}
     {{ HTML::script('js/sites/product_comment.js')}}
+    {{ HTML::script('bower/bootbox/bootbox.js') }}
 @endsection
 

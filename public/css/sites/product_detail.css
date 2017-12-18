@@ -908,7 +908,7 @@ body {
     width: 15px;
     height: 15px;
     border-style: none;
-    background: url('../images/delete.png');
+    background: url('../../img/delete.png');
     background-repeat: no-repeat;
 }
 
@@ -919,7 +919,20 @@ body {
     height: 15px;
     border-style: none;
     margin-right: 10px;
-    background: url('../images/edit.png');
+    background: url('../../img/edit.png');
+}
+
+.modal-footer .btn-danger {
+    margin-right: 4%;
+}
+
+.modal-footer .btn-success {
+    margin-right: 20%;
+}
+
+.bootbox-body {
+    text-align: center;
+    font-size: 1.3em;
 }
 
 #wrapper .edit {

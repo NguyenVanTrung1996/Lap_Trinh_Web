@@ -20,7 +20,8 @@ class CreatCommentsTable extends Migration
                 $table->integer('product_id')->unsigned();
                 $table->string('content')->nullable()->default(null);
                 $table->float('rated')->nullable()->default(0);
-                $table->timestamps();
+                $table->timestamp('updated_at')->useCurrent();
+                $table->timestamp('created_at')->useCurrent();
             });
         }
     }
