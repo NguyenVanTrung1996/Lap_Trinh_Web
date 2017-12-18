@@ -1,8 +1,3 @@
-.sidebar {
-    margin-right: 25px;
-    margin-left: 25px;
-}
-
 a:hover {
     color: black !important;
 }
@@ -119,6 +114,7 @@ td {
 
 .list-group-item {
     background: whitesmoke !important;
+    word-wrap: break-word;
 }
 
 .pull-left {

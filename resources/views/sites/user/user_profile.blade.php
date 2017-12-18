@@ -34,7 +34,7 @@
     @include('sections.menu.header')
 
     <div class="container bootstrap snippet background_user user-profile" style="height: 700px">
-        <div class="col-sm-3 sidebar">
+        <div class="col-sm-3 sidebar" style="width: 31% !important;">
             <div class="row fix-profile-bottom">
                 <div class="img-avata-icon">
                     @if((Auth::user()->avatar) != null)

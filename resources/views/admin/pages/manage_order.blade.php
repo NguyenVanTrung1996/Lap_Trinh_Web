@@ -43,7 +43,7 @@
                                             <div class="btn btn-info" style="width: 120px">{{$order->status}}</div>
                                         @elseif($order->status == "waiting")
                                             <div class="btn btn-warning" style="width: 120px" >{{$order->status}}</div>
-                                        @elseif($order->status == "complete")
+                                        @elseif($order->status == "completed")
                                             <div class="btn btn-success" style="width: 120px" >{{$order->status}}</div>
                                         @endif
                                     </td>

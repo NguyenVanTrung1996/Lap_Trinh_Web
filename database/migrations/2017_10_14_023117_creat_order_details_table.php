@@ -20,7 +20,8 @@ class CreatOrderDetailsTable extends Migration
                 $table->integer('product_id')->unsigned();
                 $table->integer('quantity')->nullable()->default(0);
                 $table->integer('total')->nullable()->default(0);
-                $table->timestamps();
+                $table->timestamp('updated_at')->useCurrent();
+                $table->timestamp('created_at')->useCurrent();
             });
         }
     }

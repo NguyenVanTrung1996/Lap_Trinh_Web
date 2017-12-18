@@ -1601,3 +1601,29 @@ $(function () {
         ratingsField.val(value);
     });
 });
+
+$('.delete').click(function (e) {
+    e.preventDefault();
+    var location = $(this).attr('href');
+    bootbox.confirm({
+        backdrop: true,
+        size: 'small',
+        message: "Delete this comment ?",
+        buttons: {
+            confirm: {
+                label: '<i class="fa fa-check"></i> Sure',
+                className: 'btn-success',
+            },
+            cancel: {
+                label: '<i class="fa fa-times"></i> Hol Up',
+                className: 'btn-danger',
+            }
+        },
+        callback: function (result) {
+            console.log(result);
+            if (result == true) {
+                window.location.replace(location);
+            }
+        },
+    });
+});

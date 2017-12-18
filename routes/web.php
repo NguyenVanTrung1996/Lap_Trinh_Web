@@ -33,11 +33,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('cart', ['as' => 'saveCart', 'uses' => 'PagesController@saveCart']);
     Route::post('product/{id}', ['as' => 'addToCart', 'uses' => 'PagesController@addToCart']);
     Route::get('delete/{id}', ['as' => 'deleteCart', 'uses' => 'PagesController@deleteCart']);
-    Route::post('checkout/{sum}', ['uses' => 'PagesController@checkoutSubmit'])->name('chSubmit');
-    Route::get('thankyou', 'PagesController@thankyou')->name('thankyou');
-    Route::get('addcomment', 'ProductController@postcomment')->name('addComment');
-    Route::get('update_rate', 'ProductController@updaterate')->name('updateRate');
-    Route::get('send_email', 'EmailController@sendEmailReminder');
+    Route::post('checkout/{sum}', ['as' => 'chSubmit', 'uses' => 'PagesController@checkoutSubmit']);
+    Route::get('thankyou', ['as' => 'thankyou', 'uses' => 'PagesController@thankyou']);
+    Route::get('addcomment', ['as' => 'addComment', 'uses' => 'ProductController@postcomment']);
+    Route::get('update_rate', ['as' => 'updateRate', 'uses' => 'ProductController@updaterate']);
+    Route::get('send_email', ['uses' => 'EmailController@sendEmailReminder']);
+    Route::get('deletecmt/{id}/{id1}', ['as' => 'deleteCmt', 'uses' => 'ProductController@deleteCmt']);
 });
 Route::get('cart/checkout', ['middleware' => ['checkout', 'auth'], 'uses' => 'PagesController@checkout'])->name('checkout');
 
@@ -61,20 +62,20 @@ Route::group(['prefix' => 'api/v1'], function () {
     // drink
     Route::get('delete_drink/{id}', 'ProductController@delete_drink');
     Route::post('update_drink/{id}', 'ProductController@update_drink');
-    Route::post('create_drink', 'ProductController@create_drink');  
-    Route::get('product_hot','ProductController@product_hot');
-    Route::get('totalamount','ProductController@totalamount');
-    Route::get('day_total','ProductController@day_total');
-    Route::get('user_oder/{id}','AdminController@user_order');
-    Route::get('order_detail/{id}','AdminController@order_detail');
-    Route::get('complete','AdminController@complete');
-    Route::get('waiting','AdminController@waiting');
-    Route::get('inprogress','AdminController@inprogress');
-    Route::get('food_sl','AdminController@food_sl');
-    Route::get('drink_sl','AdminController@drink_sl');
-    Route::get('day','AdminController@day');
-    Route::get('month','AdminController@month');
-    Route::get('year','AdminController@year');
+    Route::post('create_drink', 'ProductController@create_drink');
+    Route::get('product_hot', 'ProductController@product_hot');
+    Route::get('totalamount', 'ProductController@totalamount');
+    Route::get('day_total', 'ProductController@day_total');
+    Route::get('user_oder/{id}', 'AdminController@user_order');
+    Route::get('order_detail/{id}', 'AdminController@order_detail');
+    Route::get('complete', 'AdminController@complete');
+    Route::get('waiting', 'AdminController@waiting');
+    Route::get('inprogress', 'AdminController@inprogress');
+    Route::get('food_sl', 'AdminController@food_sl');
+    Route::get('drink_sl', 'AdminController@drink_sl');
+    Route::get('day', 'AdminController@day');
+    Route::get('month', 'AdminController@month');
+    Route::get('year', 'AdminController@year');
 });
 // Admin
 Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth']], function () {
@@ -86,12 +87,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['isAdmin', 'auth']], functio
     Route::get('manage_order', 'AdminController@manage_order')->name('manage.order');
     Route::post('change_status', 'AdminController@change_status')->name('change_status');
 });
-Route::get('addcomment', 'ProductController@postcomment')->name('addComment');
-Route::get('update_rate', 'ProductController@updaterate')->name('updateRate');
 
-Route::get('send_email','EmailController@sendEmailReminder');
-
-Route::get('chart',function(){
+Route::get('chart', function () {
     return view('admin.pages.chartjs');
 });
-

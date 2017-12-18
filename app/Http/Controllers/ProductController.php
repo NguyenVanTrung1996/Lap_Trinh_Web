@@ -126,21 +126,21 @@ class ProductController extends Controller
                 // 'image' => 'required',
             ],
             [
-                'name.required' => 'Please Insert Name',
-                'price.required' => 'Please Insert Price',
+                'name.required'        => 'Please Insert Name',
+                'price.required'       => 'Please Insert Price',
                 'description.required' => 'Please Insert Description',
             ]);
-            $new_food = new Product();
-            $new_food->name = $request->name;
-            $new_food->price = $request->price;
-            $new_food->description = $request->description;
-            $new_food->avatar = $request->image;
-            $new_food->category = "Food";
-            $new_food->save();
-            $new_category= new Gallery();
-            $new_category->product_id = $new_food->id;
-            $new_category->image = $new_food->avatar;
-            $new_category->save();
+        $new_food = new Product();
+        $new_food->name = $request->name;
+        $new_food->price = $request->price;
+        $new_food->description = $request->description;
+        $new_food->avatar = $request->image;
+        $new_food->category = "Food";
+        $new_food->save();
+        $new_category = new Gallery();
+        $new_category->product_id = $new_food->id;
+        $new_category->image = $new_food->avatar;
+        $new_category->save();
     }
 
     //drink
@@ -230,6 +230,13 @@ class ProductController extends Controller
 
     }
 
+    public function deleteCmt(Request $request)
+    {
+        Comment::destroy($request->id1);
+
+        return redirect(route('product.detail', $request->id));
+    }
+
     public function updaterate(Request $request)
     {
         $product = $request->prd1;
@@ -258,7 +265,8 @@ class ProductController extends Controller
         return $count;
     }
 
-    public function product_hot(){
+    public function product_hot()
+    {
         $product_hot = DB::select('
             select products.name, sum(order_details.quantity) as so_luong
             from order_details,products 
@@ -271,33 +279,40 @@ class ProductController extends Controller
             select sum(order_details.quantity) as so_luong
             from order_details
             ');
-        $product_hot['sum']= $sum;
+        $product_hot['sum'] = $sum;
+
         return Response::json($product_hot);
     }
 
-    public function totalamount(){
+    public function totalamount()
+    {
         $totalamount = DB::select('
             select sum(sum) as tong_tien
             from orders
             ');
+
         return Response::json($totalamount);
     }
 
-    public function day_total(){
+    public function day_total()
+    {
         $ngay_hientai = DB::select('
             select sum(sum) as tong_tien
             from orders
             where DATE(orders.created_at) = Curdate()
             ');
+
         return Response::json($ngay_hientai);
     }
 
-    public function thang_total(){
+    public function thang_total()
+    {
         $thang_hientai = DB::select('
             select sum(sum) as tong_tien
             from orders
             where Month(orders.created_at) = Curdate()
             ');
+
         return Response::json($ngay_hientai);
     }
 
